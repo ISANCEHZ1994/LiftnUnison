@@ -19,7 +19,7 @@ export const UserSchema = new Schema({
         type: String,
         required: true,
     },
-    boi: {
+    bio: {
         type: String,
     },
     date: {
