@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 mongoose.Promise = global.Promise; 
-mongoose.connect('mongodb://127.0.0.1:27017/muscle_data', {
+mongoose.connect('mongodb://127.0.0.1:27017/muscle_data', { // //localhost/socialMuscleDB
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

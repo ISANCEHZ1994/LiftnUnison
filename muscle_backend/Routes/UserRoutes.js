@@ -1,9 +1,9 @@
 import { 
     addNewUser, 
     getUsers, 
-    // getPlayerWithId,
-    // updatePlayer,
-    // deletePlayer
+    getUserWithId,
+    updateUser,
+    deleteUser
          } 
     from '../Controllers/UserController';
 
@@ -17,11 +17,11 @@ const routes = (app) => {
 
     app.route('/user/:UserId')
     // GET Specific Player
-    // .get(getPlayerWithId)
-    // // UPDATE Specifc Player
-    // .put(updatePlayer)
-    // // DELETE Specifc Player
-    // .delete(deletePlayer)
+   .get(getUserWithId)
+    // UPDATE Specifc Player
+    .put(updateUser)
+    // DELETE Specifc Player
+    .delete(deleteUser)
 }
 
 export default routes;
