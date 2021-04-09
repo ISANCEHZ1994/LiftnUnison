@@ -1,12 +1,11 @@
 import mongoose from 'mongoose';
 import { UserSchema } from '../Models/User';
 
-const User = mongoose.model('User', UserSchema); // this is the player object from playerModel
+const User = mongoose.model('User', UserSchema); 
 
 export const addNewUser = (req, res) => {
-    let newUser = new User(req.body) // create the body of the request  
-    // whatever data we are going to send FROM the request is going to be inserted inside of that particular variable
-    newUser.save( (err, User) => { // if there is an error..
+    let newUser = new User(req.body) 
+    newUser.save( (err, User) => { 
         if(err){
             res.send(err);
         }
@@ -15,7 +14,7 @@ export const addNewUser = (req, res) => {
 };
 
 export const getUsers = (req, res) => {
-    User.find( {}, (err, User) => {  // .find() is something that MonogoDB has that will find all the Users we have
+    User.find( {}, (err, User) => { 
         if(err){
             res.send(err);
         }
@@ -24,8 +23,7 @@ export const getUsers = (req, res) => {
 };
 
 export const getUserWithId = (req, res) => {
-    User.findById(req.params.UserId, (err, User) => {  // when we send a request to get a specifc player ID 
-        // we want it to look for that specifc ID
+    User.findById(req.params.UserId, (err, User) => {   
         if(err){
             res.send(err, 'we have a problem');
         }
@@ -45,8 +43,7 @@ export const updateUser = (req, res) => {
 };
 
 export const deleteUser = (req, res) => {
-    User.remove({_id: req.params.UserId}, (err, User) => {  // when we send a request to get a specifc user ID 
-        // we want it to look for that specifc ID
+    User.remove({_id: req.params.UserId}, (err, User) => {   
         if(err){
             res.send(err);
         }
