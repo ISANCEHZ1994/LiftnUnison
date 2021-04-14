@@ -37,7 +37,7 @@ export const updateUser = (req, res) => {
          // the reason we put { new: true } is so that our updated player gets displayed and not the previous one
         if(err){
             res.send(err);
-        }
+        }     
         res.json(User);
      });
 };
